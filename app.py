@@ -26,6 +26,8 @@ def fine_tune_model():
     
     # Set OPENAI_API_KEY environment variable
     set_command =  f"set OPENAI_API_KEY={openai_api_key}"
+
+    os.system(set_command)
     
     # Prepare the command
     train_command = f"openai fine_tunes.create -t data.jsonl -m {model_name}"
