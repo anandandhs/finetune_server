@@ -1,0 +1,8 @@
+python
+flask
+openai
+csv
+os
+requests
+markdown
+html2text
