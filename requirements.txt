@@ -1,6 +1,6 @@
 flask==2.3.2
 openai==0.27.8
-csv==0.0.13
+csv==3.2
 requests==2.31.0
 markdown==3.4.3
 html2text==2020.1.16
