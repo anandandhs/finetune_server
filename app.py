@@ -17,6 +17,7 @@ def random_numbers():
 
 @app.route('/train_model', methods=['POST'])
 def fine_tune_model():
+    print(request.args)
     model_name = request.args.get('model_name')
     openai_api_key = request.args.get('openai_api_key')
     file = request.files['file']
@@ -30,7 +31,7 @@ def fine_tune_model():
     os.system(set_command)
     
     # Prepare the command
-    train_command = f"openai fine_tunes.create -t data.jsonl -m {model_name}"
+    train_command = f"openai api fine_tunes.create -t data.jsonl -m {model_name}"
     
     try:
         # Execute the command and capture the output
