@@ -26,10 +26,12 @@ def fine_tune_model():
     file.save('data.jsonl')
     
     # Set OPENAI_API_KEY environment variable
-    set_command =  f"set OPENAI_API_KEY={openai_api_key}"
-
-    os.system(set_command)
+    set_command_win =  f"set OPENAI_API_KEY={openai_api_key}"
+    set_command_mac =  f'export OPENAI_API_KEY="{openai_api_key}"'
+    subprocess.check_output(set_command_win, shell=True, stderr=subprocess.STDOUT, universal_newlines=True)
+    subprocess.check_output(set_command_win, shell=True, stderr=subprocess.STDOUT, universal_newlines=True)
     
+
     # Prepare the command
     train_command = f"openai api fine_tunes.create -t data.jsonl -m {model_name}"
     
